@@ -1,0 +1,109 @@
+/*Körper*/
+body {
+    font-family: Arial, sans-serif;
+}
+/*Kopfteil*/
+header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/images/Header1.jpg);
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    
+}
+/*Überschrift, Version 1.0*/
+h1{ margin-top: 0px;
+    font-family: Pacifico, Arial, sans-serif;
+    color: white;
+    margin-bottom: 200px;
+}
+/*Navigation*/
+nav {
+   
+    width: 100%;
+    background-color: rgba(61, 61, 61, 0.275);
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease;
+}
+.nav-links:hover {
+    transform: translateY(-5px);
+}
+/*Terminbutton, muss noch implementiert werden*/
+#OnlineTermin{
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    margin:  2px;
+    border-radius: 18px;
+    background-color: #388D9C;
+    transition: transform 0.2s ease;
+}
+#OnlineTermin:hover{
+    background-color: #B0A184;
+    transform: scale(1.1);
+}
+
+/*Begrüssungstext und andere Textboxen*/
+section {
+    padding: 15px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    border-radius: 16px;
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+/*Footer, Fussbereich*/
+footer {
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+/*Icons im Footer Insta+Fb eventuel Whatsapp*/
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-media-icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-media-icons i {
+    font-size: 24px;
+}
+@media screen and (max-width: 600px) {
+    .social-media-icons {
+        flex-direction: column;
+    }
+}
+    
+
+
