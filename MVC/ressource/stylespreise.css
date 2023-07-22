@@ -1,0 +1,294 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+/*Körper*/
+body {
+    font-family: montserrat, Arial, sans-serif;
+    user-select: none; /* Verhindert, dass der Text ausgewählt wird */
+    font-weight: 300;
+    font-size: 14px;
+    cursor: default; /* Ändert den Cursor auf den Standardcursor */
+}
+
+
+/*Kopfteil*/
+.header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/images/Header1.jpg);
+    background-size: cover; /* Damit das Bild den ganzen Bildschirm einnimmt */
+    background-position:center; /* Damit das Bild zentriert ist */
+    background-attachment: fixed;
+    align-items: center; /* Damit die Elemente zentriert sind */
+    width: 100%;
+    position: relative; /* Stellt den Bezugspunkt für die absolute Positionierung der Kinder dar */
+
+    
+    /*Box für den Beschrieb der Behandlung (Modal)*/
+}
+/*überschrift*/
+#headline {
+    display: flex;
+    align-items: center;
+    margin-top: 20%;
+    font-size: 16px;
+}
+h2{ 
+    font-family: Pacifico , Arial, sans-serif; /* Damit die Schriftart Pacifico verwendet wird */
+    color: white;
+    font-size: 50px;
+}
+
+/*Navigation*/
+nav {
+    margin-bottom:-58px ;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    position: sticky; /* Fixiert die Navigation oben */
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(61, 61, 61, 0.275);
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+nav.inverted {
+    background-color: #4f483ed6; 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease; /* Damit die Elemente beim Hover etwas skaliert in einer gewissen Zeit*/
+}
+.nav-links:hover {
+    transform: translateY(-5px); /* Damit die Elemente beim Hover 5px nach oben verschoben werden (Springen) */
+}
+/*Links in der Navigation*/
+.center-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Damit die Elemente gleichmässig verteilt sind */
+    
+}
+
+
+/*Modal-Box*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
+    transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    color: black;
+    transform: scale(1);
+    transition: transform 0.3s;
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+
+.modal-content img.description-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover; 
+    margin: 10px;
+    border-radius: 60px;
+    animation-name: animatetop;
+}
+
+.modal-content p.description {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.modal-content .description {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.close-modal {
+    font-size: 28px;
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    cursor: pointer;
+    color: black;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-Termin-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Container-BildTerminButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 24px;
+}
+#OnlineTermin 
+/*ToDO: Button muss noch implementiert werden, muss in allen untermenüs vorhanden sein um jeder zeit einen Termin buchen zu können.!! */
+{
+    display: inline-block; /* Damit der Button nicht die ganze Breite einnimmt */
+    padding: 2.5px 15px;  /* Innenabstand oben und unten 5px, links und rechts 12px */
+    text-align: center; /* Damit der Text zentriert ist */
+    border-radius: 18px; /* Damit der Button abgerundete Ecken hat */
+    background: #4F483E;
+    background: -moz-linear-gradient(left, #4F483E 0%, #918572 100%);
+    background: -webkit-linear-gradient(left, #4F483E 0%, #918572 100%);
+    background: linear-gradient(to right, #4F483E 0%, #918572 100%);
+    transition: back 0.2s ease; /* Damit der Button beim Hover etwas skaliert in einer gewissen Zeit*/
+    width: 60px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+#OnlineTermin:hover{
+    transform: scale(1.04);
+    background: #000000;
+}
+#Termin{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    
+    
+}
+
+table{
+    margin-top: 24px;
+    margin-bottom: 36px;
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+} 
+
+td a:hover .description {
+    visibility: visible;
+    opacity: 1;
+}
+td a:hover .description {
+    visibility: visible;
+    opacity: 1;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+    display:block;  
+    transition: transform 0.2s ease;
+}
+
+td a:hover {
+    transform: translateX(5px);
+}
+
+#preisliste {
+    width: 65%;
+    margin: auto;
+    padding-top: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Schatten hinzufügen */
+    border-radius: 5px; /* abgerundete Ecken hinzufügen */
+}
+
+#preisliste table {
+    width: 100%;
+    border-collapse: separate; /* Ändern Sie dies, um das Spacing zwischen den Zellen zu ermöglichen */
+    border-spacing: 0 10px; /* Spacing zwischen den Zellen festlegen */
+}
+
+#preisliste th, #preisliste td {
+    padding: 10px;
+    background-color: #f2f2f2; /* Hintergrundfarbe für alle Zellen */
+    
+}
+
+#preisliste th {
+    background-color: #ffffff; /* Hervorheben der ersten Zeile */
+    border-bottom: 1px solid #000000; /* Unterer Rand der Kopfzeile */
+    color: black;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#preisliste tr:first-child {
+    border-top-left-radius: 5px; /* Abgerundete Ecken für die erste Zeile */
+    border-top-right-radius: 5px;
+}
+
+#preisliste tr:last-child {
+    border-bottom-left-radius: 5px; /* Abgerundete Ecken für die letzte Zeile */
+    border-bottom-right-radius: 5px;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+/*Icons im Footer Insta+Fb eventuel Whatsapp*/
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.social-media-icons a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s ease; 
+}
+.social-media-icons a:hover {
+    transform: translateY(-5px);
+    color: red;
+}
+.social-media-icons i {
+    font-size: 24px;
+}

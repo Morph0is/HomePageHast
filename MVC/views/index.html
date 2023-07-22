@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="stylesheet" href="/MVC/ressource/styles.css"> <!--Design-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"> <!--icons Bibliothek-->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"><!--Schriftart-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Schriftart-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Schriftart-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet"> <!--Schriftart-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--jQuery Bibliothek-->
+
+
+    <title>Zeigen Sie Ihr Gesicht der Welt | Beauty Salon Hasti</title>
+
+</head>
+<!--ToDo. Header bild und saubere überschrift.-->
+
+<body>
+<!--Hamburgermenu-oeffnen-schliessen-->
+    <script>
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+  document.querySelector('.menu').classList.toggle('active');
+  document.querySelectorAll('.line').forEach(function(line) {
+    line.classList.toggle('active');
+  });
+});
+    </script>
+    
+    <script>
+        $(document).ready(function() {
+// Bei Klick auf Link mit Klasse "open-modal"
+$('.dropD-links').click(function(e) {
+    e.preventDefault(); // Verhindert das standardmäßige Verhalten des Links
+    var modal = $(this).data('modal'); // Holt die Modale ID aus dem data-modal Attribut
+    $('#' + modal).fadeIn(); // Zeigt die Modale Box an
+});
+
+// Bei Klick auf das Kreuz oder außerhalb der Modale Box
+$('.close-modal, .modal').click(function() {
+    $('.modal').fadeOut(); // Versteckt die Modale Box
+});
+
+// Verhindert das Schließen, wenn auf den Inhalt der Modale Box geklickt wird
+$('.modal-content').click(function(e) {
+    e.stopPropagation();
+});
+});
+
+    </script>
+    <!-- Die Modale Box sollte hier platziert werden, außerhalb der Tabelle -->
+    <div id="hydrafacial-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p class="description">
+                HydraFacial <br><br>
+                HydraFacial ist eine innovative Micro-Technologie. 
+                Sie reinigt die Haut porentief und aktiviert die Erneuerung der Hautzellen. 
+                Eine sanfte und dennoch höchst effektive Behandlung gegen fettige Haut, 
+                verstopfte Poren, Akne, Narben, Pigmentflecken, Fältchen und dergleichen mehr. 
+                Das Ergebnis ist sofort sichtbar: eine jung und vital aussehende, strahlende glatte Haut.
+                <br><br>
+                Preis pro Behandlung: 190CHF
+            </p>
+            <div class="Container-BildTerminButton">
+                <img src="/MVC/ressource/images/HydraFacial.jpg" alt="Diodenlaser" class="description-image">
+                <li id="OnlineTermin"><a id="Termin" href="#Termin">Termin</a></li>
+            </div>
+        </div>
+    </div>
+    <!--Navigation-->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-links close-menu">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-links">Behandlungen</a>
+                <i class="fas fa-chevron-down"></i>
+                 <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <div class="dropD-links-submenupoint">
+                                    <a class="dropD-links-sub" href="#Angebot3">Haarentfernung</a>
+                                    <span class="arrow">&#8250;</span>
+                                </div>
+                                <ul class="dropdown-menu-sub">
+                                    <li><a class="dropD-links-sub close-menu" href="#Unterangebot1">Faden</a></li>
+                                    <li><a class="dropD-links-sub close-menu" href="#Unterangebot2">Waxing</a></li>
+                                    <li><a class="dropD-links-sub close-menu" href="#Unterangebot3">SHR`s Daurhafte <br>Haarentfernung</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <div class="dropD-links-submenupoint">
+                                    <a class="dropD-links-sub" href="#Angebot3">PRP </a>
+                                    <span class="arrow">&#8250;</span>
+                                </div>
+                                <ul class="dropdown-menu-sub">
+                                    <li><a class="dropD-links-sub close-menu" href="#Unterangebot1">Haarbehandlung</a></li>
+                                    <li><a class="dropD-links-sub close-menu" href="#Unterangebot2">HautBehandlung</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="dropD-links close-menu" data-modal="hydrafacial-modal">HydraFacial</a></li>
+                            <li><a class="dropD-links close-menu" href="#Angebot2">Diodenlaser</a></li>
+                            <li><a class="dropD-links close-menu" href="#Angebot2">BB-Glow</a></li>
+                            <li><a class="dropD-links close-menu" href="#Angebot2">Gesichtsbehandlung</a></li>
+                            
+                            <li><a class="dropD-links close-menu" href="#Angebot2">Hautbehandlung</a></li>
+                            <li><a class="dropD-links close-menu" href="#Angebot2">Microneedling</a></li>
+                            
+                        </ul>   
+            </li>
+            <li class="nav-item">
+                <a class="nav-links" href="/MVC/views/preise.html">Preise</a>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-links" href="#Angebote">Infos</a>
+                    <i class="fas fa-chevron-down"></i>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropD-links close-menu" href="#Angebot1">Verspätungen</a></li>
+                        <li><a class="dropD-links " href="#Angebot2">Stornobedingungen</a></li>
+                        
+                    </ul>
+                </li>
+            
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+               
+            </div>
+    
+    
+    
+    </nav>
+
+    <!--Header-->
+    <div class="header">
+        <script>
+            window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('inverted');
+    } else {
+        nav.classList.remove('inverted');
+    }
+});
+
+        </script>
+        
+        <!--Hauptüberschrift-->
+        <div id="headline-div">
+            <h1 id="headline">BeautySalon-Hasti</h1>
+            <img id="header-image-div" src="/MVC/ressource/images/ButterflyIcon1.png" alt="Butterfly Icon" class="nav-icon" />
+        </div>  
+        <img src="/MVC/ressource/images/googleRating.png" alt="Google Bewertung" id="GoogleBewertung"/>  <!-- Neues Bild hier -->
+    </div>
+    <script src="/MVC/ressource/Hamburger-mennu.js"></script>
+    <main id="home">
+        <section id="services">
+        
+            <p>"Darin kann man nicht nur alle Emotionen sehen, sondern auch was Sie und wie Sie leben. Das Gesicht sind Sie, mit all Ihren Gedanken, Gefühlen und all der Schönheit, welche Sie täglich im Spiegel sehen. Sie sind von Grund auf bereits schön, denn Schönheit liegt im Auge des Betrachters. Wie man jedoch damit umgeht, liegt an einem selbst. Was ich für Sie tun kann ist, dass ich Ihre Schönheit hervorhebe. Gerne biete ich Ihnen in meinem Kosmetikstudio, dazu meiner klassischen Behandlungen an."</p>
+        </section>
+        <section id="contact">
+            
+            <p>Lorem ipsum sapientem ne neque dolor erat,eros solet invidunt duo Quisque aliquid leo. Pretium patrioque sociis eu nihil Cum enim ad, ipsum alii vidisse justo id. Option porttitor diam voluptua. Cu Eam augue dolor dolores quis, Nam aliquando elitr Etiam consetetur. Fringilla lucilius mel adipiscing rebum. Sit nulla Integer ad volumus, dicta scriptorem viderer lobortis est Utinam, enim commune corrumpit Aenean erat tellus. Metus sed amet dolore justo, gubergren sed.</p>
+        </section>
+        <section id="contact">
+            
+            <p>Lorem ipsum sapientem ne neque dolor erat,eros solet invidunt duo Quisque aliquid leo. Pretium patrioque sociis eu nihil Cum enim ad, ipsum alii vidisse justo id. Option porttitor diam voluptua. Cu Eam augue dolor dolores quis, Nam aliquando elitr Etiam consetetur. Fringilla lucilius mel adipiscing rebum. Sit nulla Integer ad volumus, dicta scriptorem viderer lobortis est Utinam, enim commune corrumpit Aenean erat tellus. Metus sed amet dolore justo, gubergren sed.</p>
+        </section>
+        <section id="contact">
+            
+            <p>Lorem ipsum sapientem ne neque dolor erat,eros solet invidunt duo Quisque aliquid leo. Pretium patrioque sociis eu nihil Cum enim ad, ipsum alii vidisse justo id. Option porttitor diam voluptua. Cu Eam augue dolor dolores quis, Nam aliquando elitr Etiam consetetur. Fringilla lucilius mel adipiscing rebum. Sit nulla Integer ad volumus, dicta scriptorem viderer lobortis est Utinam, enim commune corrumpit Aenean erat tellus. Metus sed amet dolore justo, gubergren sed.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 BeautySalon-Hasti</p>
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/your_account/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/your_account/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

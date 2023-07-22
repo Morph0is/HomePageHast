@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautySalon-Hasti - Preisliste</title>
+    <link rel="stylesheet" type="text/css" href="/MVC/ressource/stylespreise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"> <!--icons Bibliothek-->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"><!--Schriftart-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Schriftart-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Schriftart-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet"> <!--Schriftart-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+
+
+
+    <main>
+        <script>
+            $(document).ready(function() {
+    // Bei Klick auf Link mit Klasse "open-modal"
+    $('.open-modal').click(function(e) {
+        e.preventDefault(); // Verhindert das standardmäßige Verhalten des Links
+        var modal = $(this).data('modal'); // Holt die Modale ID aus dem data-modal Attribut
+        $('#' + modal).fadeIn(); // Zeigt die Modale Box an
+    });
+
+    // Bei Klick auf das Kreuz oder außerhalb der Modale Box
+    $('.close-modal, .modal').click(function() {
+        $('.modal').fadeOut(); // Versteckt die Modale Box
+    });
+
+    // Verhindert das Schließen, wenn auf den Inhalt der Modale Box geklickt wird
+    $('.modal-content').click(function(e) {
+        e.stopPropagation();
+    });
+});
+
+        </script>
+        <!-- Die Modale Box sollte hier platziert werden, außerhalb der Tabelle -->
+        
+        <div id="hydrafacial-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <p class="description">
+                    HydraFacial <br><br>
+                    HydraFacial ist eine innovative Micro-Technologie. 
+                    Sie reinigt die Haut porentief und aktiviert die Erneuerung der Hautzellen. 
+                    Eine sanfte und dennoch höchst effektive Behandlung gegen fettige Haut, 
+                    verstopfte Poren, Akne, Narben, Pigmentflecken, Fältchen und dergleichen mehr. 
+                    Das Ergebnis ist sofort sichtbar: eine jung und vital aussehende, strahlende glatte Haut.
+                    <br><br>
+                    Preis pro Behandlung: 190CHF
+                </p>
+                <div class="Container-BildTerminButton">
+                    <img src="/images/HydraFacial.jpg" alt="Diodenlaser" class="description-image">
+                    <li id="OnlineTermin"><a id="Termin" href="#Termin">Termin</a></li>
+                </div>
+            </div>
+        </div>
+        
+<div id="diodenlaser-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <p class="description">
+            Diodenlaser <br><br>
+            Bei dem Diodenlaser dringt der gepulste Laserstrahl in Sekundenbruchteilen in das Gewebe ein, wird vom Melanin (dem Haarfarbstoff) in der Haarwurzel absorbiert und in Wärme
+            umgewandelt.
+            Diese thermische Reaktion führt zu einer Verödung bzw. Zerstörung der
+            Haarwurzel. Die spezielle Kühltechnik und das gepulste Laserlicht des Diodenlasers schonen
+            die Hautoberfläche, schützen Sie vor zu starker Erwärmung und damit vor den gefürchteten
+            Verbrennungen.
+            Unsere Körperhaare durchlaufen einen fixen Zyklus: auf die Wachstumsphase
+            (Annagen Phase) folgen die Ruhephase (Katagene Phase) und die Ausfallphase (Telogene
+            Phase).
+            Nur in der Wachstumsphase (Anagenen Phase) können die Haare erfolgreich zerstört
+            werden. Da sich die einzelnen Haare in unterschiedlichen Wachstumsphasen befinden, müssen
+            mehrere Behandlungen in den richtigen Abständen durchgeführt werden, um ein dauerhaftes
+            Ergebnis zu erzielen.
+            <br><br>
+            Preis pro Behandlung: 60CHF
+        </p>
+        <div class="Container-BildTerminButton">
+        <img src="/images/Diodenlaser.jpg" alt="Diodenlaser" class="description-image">
+        <li id="OnlineTermin"><a id="Termin" href="#Termin">Termin</a></li>
+    </div>
+    </div>
+</div>
+        <nav>
+        <div class="center-links">
+            <ul>
+                <li><a class="nav-links" href="/index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+     <div class="header">
+        <script>
+            window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.pageYOffset > 0) {
+        nav.classList.add('inverted');
+    } else {
+        nav.classList.remove('inverted');
+    }
+});
+
+        </script>
+        
+        <div id="headline">
+            <h2>Preise</h2>
+            
+        </div>  
+    </div>
+    
+        <section id="preisliste">
+            <table>
+                <th>Diverse Behandlungen</th><th>Preise</th>
+                    
+                </tr>
+                <tr>
+                <tr>
+                    <td>
+                        <a href="#" class="open-modal" data-modal="hydrafacial-modal">HydraFacial</a>
+                    </td>
+                    <td>190CHF</td>
+                </tr>
+                
+ 
+                <tr>
+                    <td><a href="#" class="open-modal" data-modal="diodenlaser-modal">Diodenlaser</a></td>
+                    <td>60CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="bb-glow.html">BB-Glow</a></td>
+                    <td>100CHF</td>
+                </tr>
+                <tr>
+                  <th>Gesichtsbehandlung</th>
+                </tr>
+                <tr>
+                    <td><a href="hautbehandlung.html">Hautbehandlung</a></td>
+                    <td>75CHF</td>
+                </tr>
+               
+                <tr>
+                    <td><a href="#" class="open-modal" data-modal="diodenlaser-modal">Diodenlaser</a></td>
+                    <td>60CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="bb-glow.html">BB-Glow</a></td>
+                    <td>100CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="gesichtsbehandlung.html">Gesichtsbehandlung</a></td>
+                    <td>70CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="hautbehandlung.html">Hautbehandlung</a></td>
+                    <td>75CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="microneedling.html">Microneedling</a></td>
+                    <td>90CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="open-modal" data-modal="diodenlaser-modal">Diodenlaser</a></td>
+                    <td>60CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="bb-glow.html"><br><b>Make-Up</b></a></td>
+                    <td><br><b></b> </td>
+                </tr>
+                <tr>
+                    <td><a href="gesichtsbehandlung.html">Gesichtsbehandlung</a></td>
+                    <td>70CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="hautbehandlung.html">Hautbehandlung</a></td>
+                    <td>75CHF</td>
+                </tr>
+                <tr>
+                    <td><a href="microneedling.html">Microneedling</a></td>
+                    <td>90CHF</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 BeautySalon-Hasti</p>
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/your_account/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/your_account/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

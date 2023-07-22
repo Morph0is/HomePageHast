@@ -1,0 +1,650 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+/*Körper*/
+body {
+    font-family: montserrat, Arial, sans-serif;
+    user-select: none; /* Verhindert, dass der Text ausgewählt wird */
+    font-weight: 300;
+    font-size: 14px;
+    cursor: default; /* Ändert den Cursor auf den Standardcursor */
+}
+/*Überschrift, Version 1.0*/
+h1{ 
+    font-family: Pacifico , Arial, sans-serif; /* Damit die Schriftart Pacifico verwendet wird */
+    color: white;
+    font-size: 50px;
+}
+
+
+#headline {
+    display: flex;
+    align-items: center;
+    margin-top: 80%;
+    font-size: 46px;
+    padding: 10px;
+
+}
+#headline-div{
+    display: flex;
+    justify-content: center;
+    align-items:end;
+   flex-direction: row;
+    
+}
+
+/*Kopfteil*/
+.header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/MVC/ressource/images/Header1.jpg);
+    background-size: cover; /* Damit das Bild den ganzen Bildschirm einnimmt */
+    background-position:center; /* Damit das Bild zentriert ist */
+    background-attachment: fixed;
+    align-items: center; /* Damit die Elemente zentriert sind */
+    width: 100%;
+    position: relative; /* Stellt den Bezugspunkt für die absolute Positionierung der Kinder dar */
+    /*Box für den Beschrieb der Behandlung (Modal)*/
+}
+
+#GoogleBewertung {
+    position: absolute;
+    top: 50%;  
+    right: 0; 
+    transform: translateY(100%); /* Starten Sie das Bild außerhalb des sichtbaren Bereichs */
+    opacity: 0; /* Starten Sie das Bild als unsichtbar */
+    z-index: 1; 
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 46px;
+    margin-right: 100px;
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.16); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.16);
+    -webkit-animation: fadeInUp 2s ease-out forwards; 
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+/*Modal-Box*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
+    transition: background-color 0.3s, backdrop-filter 0.3s;
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    color: black;
+    transform: scale(1);
+    transition: transform 0.3s;
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+
+.modal-content img.description-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover; 
+    margin: 10px;
+    border-radius: 60px;
+    animation-name: animatetop;
+}
+
+.modal-content p.description {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.modal-content .description {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.close-modal {
+    font-size: 28px;
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    cursor: pointer;
+    color: black;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-Termin-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Container-BildTerminButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 24px;
+}
+#OnlineTermin 
+/*ToDO: Button muss noch implementiert werden, muss in allen untermenüs vorhanden sein um jeder zeit einen Termin buchen zu können.!! */
+{
+    display: inline-block; /* Damit der Button nicht die ganze Breite einnimmt */
+    padding: 2.5px 15px;  /* Innenabstand oben und unten 5px, links und rechts 12px */
+    text-align: center; /* Damit der Text zentriert ist */
+    border-radius: 18px; /* Damit der Button abgerundete Ecken hat */
+    background: #4F483E;
+    background: -moz-linear-gradient(left, #4F483E 0%, #918572 100%);
+    background: -webkit-linear-gradient(left, #4F483E 0%, #918572 100%);
+    background: linear-gradient(to right, #4F483E 0%, #918572 100%);
+    transition: back 0.2s ease; /* Damit der Button beim Hover etwas skaliert in einer gewissen Zeit*/
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+#OnlineTermin:hover{
+    transform: scale(1.04);
+    background: #000000;
+}
+#Termin{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    
+    
+}
+
+/*Navigation*/
+
+nav.inverted {
+    background-color: #282521;
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+
+.nav-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+
+
+
+
+/*Dropdown Menü*/
+.dropdown {
+    position: relative; /* Positioniert das Dropdown Menü */
+}
+.dropdown-menu li {
+    margin: 10px 0; /* Verändert den oberen und unteren Rand */
+    position: relative;
+}
+.dropdown-menu { 
+    width: 100%;
+    display: block; /* Damit die Liste als Block dargestellt wird */
+    position: absolute; /* Positioniert das Dropdown Menü */
+    top: 20px; /* Damit das Dropdown Menü 24px vom oberen Rand entfernt ist */
+    background-color: rgba(255, 255, 255, 0.804);  /*Hintergrubdfarbe des Dropdown Menüs*/
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+    box-shadow: 8px 13px 23px 12px rgba(56, 56, 56, 0.089);
+    padding: 12px 16px; /* Innenabstand oben und unten 12px, links und rechts 16px */
+    z-index: 1; /* Damit das Dropdown Menü über den anderen Elementen ist */
+    opacity: 0; /* Damit das Dropdown Menü nicht sichtbar ist */
+    transform: translateY(10%); /* Positioniert das Menü außerhalb des sichtbaren Bereichs */
+    transition: opacity 0.7s ease, transform 0.3s ease; /* Damit das Dropdown Menü beim Hover in einer gewissen Zeit sichtbar wird */
+    pointer-events: none; /* Damit das Dropdown Menü nicht klickbar ist */  
+    min-width: 200px;
+    border-radius: 8px;
+    
+}
+
+  
+  .dropdown-menu::before {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    opacity: 0;
+    
+  }
+  
+  .dropdown-menu:hover,
+  .dropdown-menu:hover::before {
+    opacity: 1;
+    
+  }
+ 
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1; /* Damit das Dropdown Menü sichtbar ist */
+    transform: translateY(0); /* Bringt das Menü in den sichtbaren Bereich */
+    pointer-events: auto; /* Damit das Dropdown Menü klickbar ist */
+}
+.dropD-links{
+    transition: transform 0.2s ease; /* Damit die Elemente beim Hover etwas skaliert in einer gewissen Zeit*/
+    
+}
+.dropD-links-submenupoint {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.dropD-links-submenupoint a {
+    color: black;
+    text-decoration: none;
+}
+.dropD-links-submenupoint a:hover{
+    transform: translateX(5px);
+}
+.dropD-links-submenupoint .arrow {
+    margin-left: auto;
+}
+.dropD-links-submenupoint::after{
+    content: "›";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    }
+.dropD-links:hover{
+    transform: translateX(5px);
+}
+.dropdown-submenu {
+    position: relative;
+}
+/*Dies ist das Dropdown Menü für die Unterseiten*/
+.dropdown-menu-sub {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.804);  /*Hintergrubdfarbe des Dropdown Menüs*/
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 12px 16px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 0.3s ease, transform 0.9s ease;
+    pointer-events: none;
+    min-width: 200px;
+    border-radius: 8px;
+}
+
+.dropdown-submenu:hover .dropdown-menu-sub {
+    visibility: visible;
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.dropD-links-sub {
+    transition: transform 0.2s ease;
+}
+.dropD-links-sub:hover {
+    transform: translateX(5px);
+}
+/*Dies dient dazu das die ganze breite des Dropdown Menüs genutzt wird*/
+.dropD-links, .dropD-links-sub {
+    color: black;
+    transition: transform 0.2s ease;
+    display: block; /* Hier haben wir display auf block gesetzt */
+    width: 100%; /* Und hier haben wir die Breite auf 100% gesetzt */
+}
+.fa-chevron-down {
+    color: white;
+    
+}
+/*Terminbutton, muss noch implementiert werden*/
+.OnlineTermin 
+/*ToDO: Button muss noch implementiert werden, muss in allen untermenüs vorhanden sein um jeder zeit einen Termin buchen zu können.!! */
+{
+    display: inline-block; /* Damit der Button nicht die ganze Breite einnimmt */
+    padding: 2.5px 15px;  /* Innenabstand oben und unten 5px, links und rechts 12px */
+    text-align: center; /* Damit der Text zentriert ist */
+    border-radius: 18px; /* Damit der Button abgerundete Ecken hat */
+    background: #4f483e;
+    background: -moz-linear-gradient(left, hsl(33, 11%, 16%) 0%, #918572 100%);
+    background: -webkit-linear-gradient(left, #36312a 0%, #918572 100%);
+    background: linear-gradient(to right, #282521 0%, #918572 100%);
+    transition: transform 0.2s ease; /* Damit der Button beim Hover etwas skaliert in einer gewissen Zeit*/
+}
+.OnlineTermin:hover{
+    background-color: #B0A184;
+    transform: scale(1.1);
+}
+/*Begrüssungstext und andere Textboxen*/
+section {
+    padding: 15px; /* Innenabstand oben und unten 15px, links und rechts 0 */
+    margin-top: 30px; /* Damit der Abstand zum oberen Rand 30px ist */
+    margin-left: auto; /* Damit der Abstand zum linken Rand 0 ist */
+    margin-right: auto; /* Damit der Abstand zum rechten Rand 0 ist */
+    max-width: 700px; /* Damit die maximale Breite 700px ist */
+    -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+    box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+}
+/*Footer, Fussbereich*/
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+/*Icons im Footer Insta+Fb eventuel Whatsapp*/
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.social-media-icons a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s ease; 
+}
+.social-media-icons a:hover {
+    transform: translateY(-5px);
+    color: linear-gradient(135deg, #6443BC 0%, #F4CA6E 51%, #D73466 100%);
+    }
+.social-media-icons i {
+    font-size: 24px;
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+    nav ul li{
+        margin : 16px 0;
+    }
+    .nav-menu.active{
+        left:0;
+    }
+
+    
+
+
+
+
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    li{
+        list-style: none;
+        
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .navbar{
+        width: 100%;
+        font-weight: 300;
+        margin-bottom:-70px ;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        position: sticky; /* Fixiert die Navigation oben */
+        z-index: 2;
+        top: 0;
+        background-color: rgba(77, 72, 60, 0.275);
+        -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+        box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+        min-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 24px; /* Innenabstand links und rechts 24px */
+    }
+    .nav-menu{
+        display: flex;
+        align-items: space-between;
+        align-items: center;
+        gap: 60px; 
+    }
+    
+    .nav-links {
+        padding: 1.2rem;
+        transition: transform 0.2s ease;
+        transform-origin: center; /* Festlegen des Transformationsursprungs auf den Mittelpunkt */
+        font-weight: 400;
+      }
+      
+      .nav-links:hover {
+        transform: scale(1.9);
+      }
+      
+    .hamburger {
+        display: none;
+        cursor: pointer;
+    }
+    .bar{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        -webkit-transition:  all 0.3s ease-in-out;
+        transition:  all 0.3s ease-in-out;
+        background-color: white;
+        
+    }
+    @media screen and (max-width: 768px) {
+        .hamburger {
+            display: block;
+            
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+            
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .nav-menu{
+            position: fixed;
+            left:-100%;
+            top: 49px;
+            gap: 0px;
+            gap: 0px;
+            flex-direction: column;
+            background: #D8C3A3;
+            background: -moz-radial-gradient(center, #D8C3A3 0%, #BAA88C 50%, #A09179 100%);
+            background: -webkit-radial-gradient(center, #D8C3A3 0%, #BAA88C 50%, #A09179 100%);
+            background: radial-gradient(ellipse at center, #D8C3A3 0%, #BAA88C 50%, #A09179 100%);
+            width: 100%;
+            height: 80%;
+            text-align:center;   
+            transition: 0.3s;
+            height: 100%;
+        }
+        .nav-item{
+            margin: 16 0px;
+        }
+        .nav-menu.active{
+            left: 0;
+        }
+        .navbar{
+            width: 100%;
+            font-weight: 300;
+            margin-bottom:-70px ;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            position: sticky; /* Fixiert die Navigation oben */
+            z-index: 2;
+            top: 0;
+            background-color: rgba(77, 72, 60, 0.275);
+            -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08); 
+            box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+            min-height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px; /* Innenabstand links und rechts 24px */
+        }
+        #headline {
+            display: flex;
+            align-items: center;
+            margin-top: 80%;
+            font-size: 32px;
+            padding: 10px;
+        }
+        #headline-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           flex-direction: column;
+            
+        }
+        .nav-icon {
+            height: 90px;
+        }
+        .dropdown-menu { 
+            display: block;
+            position: absolute;
+            top: 20px;
+            width: 700px; /* Neue Eigenschaft: Breite von 700px */
+            left: 50%; /* Neue Eigenschaft: Linker Rand auf 50% */
+            margin-left: -350px; /* Neue Eigenschaft: Negative Hälfte der Breite */
+            height: 80vh;
+            background-color: rgba(255, 255, 255, 0.804);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            -webkit-box-shadow: 8px 13px 23px 12px rgba(0,0,0,0.08);
+            box-shadow: 8px 13px 23px 12px rgba(56, 56, 56, 0.089);
+            padding: 12px 16px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(10%);
+            transition: opacity 0.7s ease, transform 0.3s ease;
+            pointer-events: none;
+            border-radius: 8px;
+            font-size: large;
+        }
+        .dropdown-menu-sub {
+            display: block;
+            visibility: hidden;
+            position: absolute;
+            top: 20px;
+            width: 700px; /* Neue Eigenschaft: Breite von 700px */
+            left: 50%; /* Neue Eigenschaft: Linker Rand auf 50% */
+            margin-left: -350px; /* Neue Eigenschaft: Negative Hälfte der Breite */
+            height: 80vh;
+            background-color: rgba(255, 255, 255, 0.804);  /*Hintergrubdfarbe des Dropdown Menüs*/
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 12px 16px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(10%);
+            transition: opacity 0.3s ease, transform 0.9s ease;
+            pointer-events: none;
+            min-width: 200px;
+            border-radius: 8px;
+            font-size: large;
+        }
+        a{
+            font-size: large;
+            font-size: 30px;
+        }
+        .modal {
+            display: none; /* Verstecken der Box */
+            position: fixed; /* Positionierung der Box */
+            z-index: 3; /* Über andere Inhalte legen */
+            padding-top: 100px; /* Position von oben */
+            left: 0;
+            top: 0;
+            width: 100%; /* Volle Breite */
+            height: 100%; /* Volle Höhe */
+            overflow: auto; /* Ermöglichen des Scrollens */
+            background-color: rgba(0,0,0,0.4); /* Schwarze Hintergrundfarbe mit Opazität */
+        }
+        
+        /*Modal-Inhalt*/
+        .modal-content {
+            display: block;
+            position: relative;
+            background-color: #fefefec8;
+            margin: auto;
+            padding: 1rem;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            max-width: 40rem;
+            border-radius: 0px;
+            width: 100%;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        .modal-content img.description-image {
+            height: 100px;
+            width: 100px;
+            object-fit: cover; 
+            margin: 10px; /* Platz zwischen Bild und Text */
+            border-radius: 60px;
+            animation-name: animatetop;
+        }
+        #GoogleBewertung {
+            top: 30%;
+            margin-right: 10px;
+
+            
+        }
+        
+        
+        
+        
+    }
+    
+
+
